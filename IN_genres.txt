@@ -1,0 +1,7 @@
+action
+comedy
+drama
+fantasy
+fiction
+mystery
+romance
