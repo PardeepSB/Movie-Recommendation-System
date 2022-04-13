@@ -2,6 +2,7 @@
 ###Movie Recommendation System
 ###Author: Pardeep Bhattal
 ###
+###
 def write_perstudent_to_file(lout_Strings,the_file):
     
     fileRef = open(the_file,"w") # opening file to be written
@@ -12,7 +13,7 @@ def write_perstudent_to_file(lout_Strings,the_file):
     
     return
 
-#function that tells user to correct themselves in input cannot be read
+#function that tells user to correct themselves when input cannot be read.
 def questions(prompt,n):
     x = "true"
     y = x
@@ -32,7 +33,7 @@ def questions(prompt,n):
             y = "false"
     return value
 
-#used a certain amount of spaces in order to get the categories to fit
+#Function for space correction and showing user recommendation.
 def Recommendation():
   print("movie            type     genres           rating            origin")
   for i in range(10):
@@ -41,6 +42,7 @@ def Recommendation():
   return ff
 
 
+#Read file input.
 def reading_file(the_file):
     
     fileRef = open(the_file, "r")
@@ -53,7 +55,7 @@ def reading_file(the_file):
 
     return localList_ofstrings
 
-
+#read stringed list from file.
 def read_string_list_from_file(the_file):
     
   fileRef = open(the_file,"r")      # opening file to be read
@@ -66,6 +68,7 @@ def read_string_list_from_file(the_file):
   #print ("\n JUST TO TRACE, the list OF STRINGS is:\n")  
   return localList_ofstrings
 
+#printing all possible options within stored data.
 def All():
     number = len(alldata)
     #print(" JUST TO TRACE, the lists with data are:\n\n")
@@ -94,7 +97,7 @@ def All():
         
     return ""
 
-#this is the first function that sorts the user values, it will spit out a new variable that slightly narrows down the bigLST to the users choice. This function narrows down based on the type
+#Sort the user values,new list returned, narrows down the bigLST to the users choice. 
 def counter(x):
   newlst = []
   for i in range(len(x)):
@@ -103,7 +106,7 @@ def counter(x):
   return newlst
 
 
-#this second counter will do the same, it will narrow down the new list from counter() and create a new list that is ever more narrowed down. This function narrows down based on the genre
+#Narrow down the new list from counter() and create a new list that is ever more narrowed down. 
 def counter2(x):
   newlst = []
   for i in range(len(x)):
@@ -114,7 +117,7 @@ def counter2(x):
     newlst = v1
   return newlst
 
-#if you notice on the bottom of each function, there is an if statement. If the user value, in this case rating, cannot narrow down the list, the returned list will be empty. In order to prevent errors, it is set up so it would essentially skip this particular function. This function narrows down based on the rating
+#If the user value, in this case rating, cannot narrow down the list, the returned list will be empty.
 def counter3(x):
   newlst = []
   for i in range(len(x)):
@@ -137,12 +140,12 @@ def counter4(x):
     newlst = v3
   return newlst
 
-
+#Opening recommendations csv to reset all previous values
 f = open('OUT_recommendations.csv', 'r+')
 f.truncate(0) # need '0' when using r+
 f.close()
 
-#This was created to specify spacing
+#List created to specify spacing
 newwlst = ['Harry_Potter 	 1        [2, 3, 4, 5]     0 		         1','The_Matrix 	     1 	      [0, 3, 4] 	   4 		         1',
 'Black_mirror 	 0    	  [4, 5]    	   3    	      	 1',
 'Avenger 	     1 	      [0, 4] 	       2 		         1',
@@ -154,9 +157,10 @@ newwlst = ['Harry_Potter 	 1        [2, 3, 4, 5]     0 		         1','The_Matrix
 'Invented2 	     1 	      [6, 7] 	       4 		         1']  
 
 
+#Initialize list for all data
 lstBIG = reading_file("IN_all_data.txt")
 
-
+#Start Proram for user interface
 print("=" * 55)
 print("WELCOME to the Movies Recommendation System!\n" + "=" * 55)
 
@@ -189,18 +193,18 @@ print("GENRES: from file\n")
 '''
 
 
-#here is where the main level of the program starts
+#Main level of the program starts
 lstNames = []
 
 INgenre = read_string_list_from_file("IN_genres.txt")
 alldata = read_string_list_from_file("IN_all_data.txt")
 
-#first the user will  prompted to make a request
+#User prompted to make a request
 ans = input("\n **Would you like to make a request? (y/n) --> ").lower()
 y = ans
 while y == ans: 
   lst = []
-  #here the user will input the selection and define the value of the variables
+  #User inputs selection process begins
   if ans == "y":  
     print("\n\n Please provide the features for your movie (type the number code): ")       
     print("\nType\n0 - tv series\n1 - movies\n")
@@ -219,7 +223,7 @@ while y == ans:
 
     print("\n We recommend...")
 
-    #this is where the earlier functions that sort the list come in, as each function spits out another list that is slightly more narrowed down than the last
+    #list sorting
     v1 = counter(lstBIG)
     v2 = counter2(v1)
     v3 = counter3(v2)
@@ -227,9 +231,8 @@ while y == ans:
                  
     print(Recommendation())
     lstNames += [v4[0][0]]
-    #print(v4)
     
-    #this was a tricky part, we had to figure out how to make the program give us the next value in the list of recommendations and use that value to find the position of the movie in another list in order for it to be printed in a different format (different fomrat = different amount of spaces)
+    #return next value in the list of recommendations and use that value to find the position of the movie in another list
     i = 0
     var = ""
     while i < len(v4):
@@ -242,7 +245,8 @@ while y == ans:
         else:
           print("\n We recommend...")
           print("movie            type     genres           rating            origin")
-          #This loop lets the first word to be in the second selection (which would be the movie name) and cross match that to the list of movies with proper spacing
+            
+          #This loop lets the first word to be in the second selection (which would be the movie name)
           for n in range(i,10):
             if v4[i][0] in newwlst[n]:
               fnf = newwlst[n]
@@ -255,18 +259,18 @@ while y == ans:
   else:
     y = "false"
 
-#this is the list used to write onto the output file to user
-#List of Movies is saved into a .csv file
+#save all recommendations within a list
 lst1 = []
 for length in range(len(lstNames)):
   lst1 += [lstNames[length]+"\n"] 
 
 lst1 = list(dict.fromkeys(lst1))
 
-cool = write_perstudent_to_file(lst1,"OUT_recommendations.csv")
-
-saving = input("\nAre you ready to save your recommended movies? (y/n) --> ").lower()
+#List used to write onto the output file to user
+#List of Movies is saved into a .csv file depending on user
+saving = input("\nWould you like to save you recommended movies? (y/n) --> ").lower()
 if saving == "y":
+  save = write_perstudent_to_file(lst1,"OUT_recommendations.csv")
   print("\nList of strings ready to save to output file, one per line\n")
   for i in range(len(lst1)):
     print(str(lst1[i]))
