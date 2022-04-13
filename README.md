@@ -6,7 +6,7 @@ The user has options to receive more recommendations based on similar features o
 The user has the ability to save all recommendations by the program within a CSV excel fiel that they may view at a later date.
 
 ## Demo
-Sample Run
+Sample Run <br />
 ![MovieRecommend](https://user-images.githubusercontent.com/73859429/163281378-ecd63ab5-9b4a-4140-87b0-8b02ed2fb0b0.PNG)
 
 Output CSV file from Sample Rune
