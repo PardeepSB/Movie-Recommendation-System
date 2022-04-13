@@ -14,6 +14,7 @@ Output CSV file from Sample Run:<br />
 <p align="center">
 <img src="https://user-images.githubusercontent.com/73859429/163281482-4b6222c1-f172-48d5-b601-d5a99bf24101.PNG">
 </p>
+<br />
 ## Future Implementations
 	1. Implement SQL database for a larger variety of movies than the hardcoded current database
 	2. Make use of different features to allow for more specific selection
