@@ -25,7 +25,7 @@ Output CSV file from Sample Run:<br />
 	3. Develop Android App for this program, allowing users to find recommendations on their phones
 	4. Link user movie or tv show trailers based on their saved recommendations
 	5. Create new CSV file for each run instead of one that reset everytime user runs program 
-	(User option to replace current/previous file or create new one)
+	   (User option to replace current/previous file or create new one)
 
 
 
