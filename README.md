@@ -13,11 +13,11 @@ Output CSV file from Sample Rune
 ![SavedRecommend](https://user-images.githubusercontent.com/73859429/163281482-4b6222c1-f172-48d5-b601-d5a99bf24101.PNG)
 
 ## Future Implementations
-  1. Implement SQL database for a larger variety of movies than the hardcoded current database
-  2. Make use of different features to allow for more specific selection
-  3. Develop Android App for this program, allowing users to find recommendations on their phones
-  4. Link user movie or tv show trailers based on their saved recommendations
-  5. Create new CSV file for each run instead of one that reset everytime user runs program 
+	1. Implement SQL database for a larger variety of movies than the hardcoded current database
+	2. Make use of different features to allow for more specific selection
+	3. Develop Android App for this program, allowing users to find recommendations on their phones
+	4. Link user movie or tv show trailers based on their saved recommendations
+	5. Create new CSV file for each run instead of one that reset everytime user runs program 
      (User option to replace current/previous file or create new one)
 
 
