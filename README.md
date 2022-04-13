@@ -11,7 +11,7 @@ Sample Run <br />
 	<img src="https://user-images.githubusercontent.com/73859429/163281378-ecd63ab5-9b4a-4140-87b0-8b02ed2fb0b0.PNG">
 <p>
 Output CSV file from Sample Run
-![SavedRecommend](https://user-images.githubusercontent.com/73859429/163281482-4b6222c1-f172-48d5-b601-d5a99bf24101.PNG)
+<img src="https://user-images.githubusercontent.com/73859429/163281482-4b6222c1-f172-48d5-b601-d5a99bf24101.PNG">
 
 ## Future Implementations
 	1. Implement SQL database for a larger variety of movies than the hardcoded current database
