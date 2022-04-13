@@ -6,13 +6,14 @@ The user has options to receive more recommendations based on similar features o
 The user has the ability to save all recommendations by the program within a CSV excel fiel that they may view at a later date.
 
 ## Demo
-Sample Run <br />
+Sample Run: <br />
 <p align="center">
 	<img src="https://user-images.githubusercontent.com/73859429/163281378-ecd63ab5-9b4a-4140-87b0-8b02ed2fb0b0.PNG">
-<p>
-Output CSV file from Sample Run
+</p>
+Output CSV file from Sample Run:<br />
+<p align="center">
 <img src="https://user-images.githubusercontent.com/73859429/163281482-4b6222c1-f172-48d5-b601-d5a99bf24101.PNG">
-
+</p>
 ## Future Implementations
 	1. Implement SQL database for a larger variety of movies than the hardcoded current database
 	2. Make use of different features to allow for more specific selection
